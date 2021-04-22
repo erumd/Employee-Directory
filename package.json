@@ -1,0 +1,26 @@
+{
+  "name": "Employee-Directory",
+  "version": "1.0.0",
+  "description": "This application lets you view my entire employee directory or search up employees.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erumd/Employee-Directory.git"
+  },
+  "keywords": [],
+  "author": "Erum Dhukka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erumd/Employee-Directory/issues"
+  },
+  "homepage": "https://github.com/erumd/Employee-Directory#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "react-router-dom": "^5.2.0",
+    "table": "^6.3.2"
+  }
+}
