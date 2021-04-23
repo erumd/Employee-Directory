@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/erumd/Employee-Directory#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta3",
     "react-bootstrap": "^1.5.2",
     "react-router-dom": "^5.2.0",

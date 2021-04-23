@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Heading() {
+function Header() {
   return (
     <div>
       {/* <div className="container"> */}
@@ -11,3 +11,5 @@ export default function Heading() {
     // </div>
   );
 }
+
+export default Header;
