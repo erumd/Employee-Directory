@@ -4,9 +4,9 @@
 import React from 'react';
 import Header from './components/header';
 // import Header from './components/header'
-// import {DataPage} from './components/database';
+// import DataPage from './components/database';
 import Search from './components/search';
-// import Table from './components/Table';
+import Table from './components/Table';
 
 
 function App() {
@@ -14,9 +14,8 @@ function App() {
    
     <div>
        <Header />
-       {/* <Table /> */}
-       
       <Search /> 
+      <Table />
     </div>
 
   );
