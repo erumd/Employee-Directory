@@ -1,58 +1,101 @@
 // https://www.youtube.com/watch?v=BwWpG0cNFLU&ab_channel=CodingShiksha
 // Class activity 19
 
-// import React  from 'react';
-import { Component } from 'react';
-// import axios from 'axios';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-class Table extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      loading: false,
-    };
-  }
-
-  componentDidMouth() {
-    fetch('https://randomuser.me/api/?results=20&nat=us')
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({
-          items: response.results,
-          loading: true,
-        });
+const Table = () => {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    axios
+      .get('https://randomuser.me/api/?results=20&nat=us')
+      .then(function (random) {
+        setUsers(random.data.results);
       });
-  }
+  }, []);
+  //   constructor(props) {
+  // super(props);
+  // this.state = {
+  //   state = {
+  // users: [],
+  //   loading: false,
+  //   };
+  //   }
 
-  render() {
-    var { items, loading } = this.state;
+  //   componentDidMouth() {
+  //     axios
+  //       .get('https://randomuser.me/api/?results=20&nat=us')
+  //       // fetch('')
+  //       // .then((response) => response.json())
+  //       .then((response) => {
+  //         const users = response.data.results;
+  //         this.setState({
+  //           //   users: users.data.results,
+  //           users,
+  //           // items: response.results,
+  //           // loading: true,
+  //         });
+  //         console.log('This is the response', users);
+  //       });
+  //   }
 
-    if (loading) {
-      return (
-        <div> Loading...</div>
-        // <div className= "container">
-        //         {items.map(item => (
+  // USE HOOKS
 
-        //             // <h1> {item.name.first} </h1>
-        //             <img src= {item.picture.medium} alt= {item.name.first} />
-        //         ))}
+  //   render() {
+  // var { items, loading } = this.state;
 
-        //     </div>
-      );
-    } else {
-      return (
-        //   <div> data... </div>;
+  // if (loading) {
+  //   return (
+  // <div> Loading...</div>
+  // <div className= "container">
+  //         {items.map(item => (
 
-        <div className="container"> data...
-          {items.map(item => (
-            // <h1> {item.name.first} </h1>
-            <img src={item.picture.medium} alt={item.name.first} />
+  //             // <h1> {item.name.first} </h1>
+  //             <img src= {item.picture.medium} alt= {item.name.first} />
+  //         ))}
+
+  //     </div>
+  //   );
+  // } else {
+  return (
+    //   <div> data... </div>;
+    <div className="container">
+      {/* <img src="https://randomuser.me/api/portraits/med/men/75.jpg" alt="" class="img-thumbnail"></img> */}
+
+      <table className="table">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">Picture</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((item) => (
+            <tr>
+              <th scope="row">
+                {' '}
+                <img src={item.picture.medium} alt="" />{' '}
+              </th>
+              <td>{item.name.first}</td>
+              <td>{item.name.last}</td>
+              <td>{item.email}</td>
+              <td>{item.cell}</td>
+            </tr>
           ))}
-        </div>
-      )
-    }
-  }
-}
+        </tbody>
+      </table>
+      {/* {items.map((item) => (
+                    // <h1> {item.name.first} </h1>
+                    <img src={item.picture.medium} alt={item.name.first} />
+                ))} */}
+    </div>
+  );
+  // }
+  //   }
+};
 
 export default Table;
