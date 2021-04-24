@@ -1,11 +1,28 @@
 // Bootstrap documentation https://getbootstrap.com/docs/4.0/components/navbar/#forms
 //tutor example tried to use props
 // with out props add "const Search= ({handleChange, value}) => {"   GET rid of props
-// activity 19 in class 
+// activity 19 in class
 
-import React from 'react';
+import { useState } from 'react';
+// import {users} from './Table';
 
-const Search = (props) => {
+const limitedUsers = [];
+
+const Search = () => {
+  const [users, setUsers] = useState(limitedUsers);
+  const [search, setSearch] = useState('');
+
+  const handleSearch = ({ target }) => {
+    const { value } = target;
+    setSearch(value);
+    if (!search) setUsers(limitedUsers);
+    else {
+      const filteredUsers = limitedUsers.filter((item) => {
+        return item.name.includes(value) || item.type.includes(value);
+      });
+      setUsers(filteredUsers);
+    }
+  };
   return (
     <div className="searchBar">
       {/* <form className="form-inline my-2 my-lg-0 mx-auto" > */}
@@ -15,10 +32,14 @@ const Search = (props) => {
           type="search"
           placeholder="Search for Employee"
           name="search"
-          onChange={props.handleChange}
-          value={props.value}
+          onChange={handleSearch}
+          //   value={value}
         />
-        <button onClick={props.handleFormSubmit} className="btn btn-secondary my-2 my-sm-0" type="submit">
+        <button
+          //   onClick={handleFormSubmit}
+          className="btn btn-secondary my-2 my-sm-0"
+          type="submit"
+        >
           Search
         </button>
       </form>

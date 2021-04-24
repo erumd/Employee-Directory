@@ -2,8 +2,9 @@
 // Class activity 19
 
 import React from 'react';
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useState, useEffect } from 'react';
+
 
 const Table = () => {
   const [users, setUsers] = useState([]);
