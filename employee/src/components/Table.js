@@ -5,7 +5,6 @@ import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-
 const Table = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -15,55 +14,9 @@ const Table = () => {
         setUsers(random.data.results);
       });
   }, []);
-  //   constructor(props) {
-  // super(props);
-  // this.state = {
-  //   state = {
-  // users: [],
-  //   loading: false,
-  //   };
-  //   }
-
-  //   componentDidMouth() {
-  //     axios
-  //       .get('https://randomuser.me/api/?results=20&nat=us')
-  //       // fetch('')
-  //       // .then((response) => response.json())
-  //       .then((response) => {
-  //         const users = response.data.results;
-  //         this.setState({
-  //           //   users: users.data.results,
-  //           users,
-  //           // items: response.results,
-  //           // loading: true,
-  //         });
-  //         console.log('This is the response', users);
-  //       });
-  //   }
-
-  // USE HOOKS
-
-  //   render() {
-  // var { items, loading } = this.state;
-
-  // if (loading) {
-  //   return (
-  // <div> Loading...</div>
-  // <div className= "container">
-  //         {items.map(item => (
-
-  //             // <h1> {item.name.first} </h1>
-  //             <img src= {item.picture.medium} alt= {item.name.first} />
-  //         ))}
-
-  //     </div>
-  //   );
-  // } else {
+  //
   return (
-    //   <div> data... </div>;
     <div className="container">
-      {/* <img src="https://randomuser.me/api/portraits/med/men/75.jpg" alt="" class="img-thumbnail"></img> */}
-
       <table className="table">
         <thead className="thead-dark">
           <tr>
@@ -89,14 +42,60 @@ const Table = () => {
           ))}
         </tbody>
       </table>
-      {/* {items.map((item) => (
-                    // <h1> {item.name.first} </h1>
-                    <img src={item.picture.medium} alt={item.name.first} />
-                ))} */}
     </div>
   );
-  // }
-  //   }
 };
 
 export default Table;
+
+// HARD WORK BELOW
+// constructor(props) {
+// {
+  /* {items.map((item) => (
+                    // <h1> {item.name.first} </h1>
+                    <img src={item.picture.medium} alt={item.name.first} />
+                ))} */
+// }
+// super(props);
+// this.state = {
+//   state = {
+// users: [],
+//   loading: false,
+//   };
+//   }
+
+//   componentDidMouth() {
+//     axios
+//       .get('https://randomuser.me/api/?results=20&nat=us')
+//       // fetch('')
+//       // .then((response) => response.json())
+//       .then((response) => {
+//         const users = response.data.results;
+//         this.setState({
+//           //   users: users.data.results,
+//           users,
+//           // items: response.results,
+//           // loading: true,
+//         });
+//         console.log('This is the response', users);
+//       });
+//   }
+
+// USE HOOKS
+
+//   render() {
+// var { items, loading } = this.state;
+
+// if (loading) {
+//   return (
+// <div> Loading...</div>
+// <div className= "container">
+//         {items.map(item => (
+
+//             // <h1> {item.name.first} </h1>
+//             <img src= {item.picture.medium} alt= {item.name.first} />
+//         ))}
+
+//     </div>
+//   );
+// } else {
