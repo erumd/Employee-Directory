@@ -16,7 +16,7 @@ const Table = () => {
   }, []);
   //
   return (
-    <div className="container">
+    <div className="container mt-3">
       <table className="table">
         <thead className="thead-dark">
           <tr>
@@ -51,7 +51,7 @@ export default Table;
 // HARD WORK BELOW
 // constructor(props) {
 // {
-  /* {items.map((item) => (
+/* {items.map((item) => (
                     // <h1> {item.name.first} </h1>
                     <img src={item.picture.medium} alt={item.name.first} />
                 ))} */

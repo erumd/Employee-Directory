@@ -4,7 +4,7 @@
 // activity 19 in class
 
 import { useState } from 'react';
-// import {users} from './Table';
+import items from './Table';
 
 const limitedUsers = [];
 
@@ -24,25 +24,31 @@ const Search = () => {
     }
   };
   return (
-    <div className="searchBar">
+    <div className="searchBar row mt-5">
       {/* <form className="form-inline my-2 my-lg-0 mx-auto" > */}
-      <form className="form-inline">
+      <form className="form mt-3">
+      {/* <form className="form-control w-25 align-center mt-3"> */}
+
         <input
-          className="form-control mr-sm-2"
+          className="form-control w-25 mx-auto"
           type="search"
           placeholder="Search for Employee"
           name="search"
           onChange={handleSearch}
           //   value={value}
         />
+        
+        
+      </form>
+      <div>
         <button
           //   onClick={handleFormSubmit}
-          className="btn btn-secondary my-2 my-sm-0"
+          className="btn btn-secondary mt-3 mb-5 d-grid mx-auto"
           type="submit"
         >
           Search
         </button>
-      </form>
+        </div>
     </div>
   );
 };
