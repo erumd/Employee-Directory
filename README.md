@@ -4,12 +4,11 @@
 
 ## Description
 
-This application lets you view my entire employee directory or search up employees.
+This application lets you view my entire employee directory or search up employees. This application is built using HTML, CSS, JavaScipt, Node.js, Bootstrap, and React.
 
 ## Table of Contents
 
 - [Deployment](#deployment)
-- [Installation](#installation)
 - [Contributing](#contributing)
 - [Questions](#questions)
 - [License](#license)
@@ -20,15 +19,9 @@ https://github.com/erumd/Employee-Directory
 
 https://erumd.github.io/Employee-Directory/
 
-## Installation
-
-1. After cloning repo to your device locate the folder in "employee" folder
-2. In terminal run "npm install"
-3. In terminal command line run "node server.js"
-
 ## Contributing
 
-If you would like to make this application better then please fork this repo. Make changes and push changes for me to approve.
+If you would like to make this application better then please fork this repo. Create your branch. Push your changes. Lastly, open a pull request on GitHub for me to approve.
 
 ## Questions
 
