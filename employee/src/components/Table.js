@@ -4,7 +4,9 @@
 
 import React from 'react';
 import axios from 'axios';
-import UpArrowImage from '../'
+import UpArrowImage from './images/uparrow.png';
+import DownArrowImage from './images/down2.png';
+
 // import Search2 from './search2';
 import { useState, useEffect } from 'react';
 
@@ -40,8 +42,45 @@ const Table = () => {
     }
   };
 
-  const { handleDownArrowSort } = () => {};
-  const { handleUpArrowSort } = () => {};
+  const handelDownArrowSort = () => {
+    let copy = [...names];
+    let sortedArray = copy.sort(sortAlphabeticallyReverse);
+    console.log(sortedArray);
+    setNames(sortedArray)
+  }
+
+  const handelUpArrowSort = () => {
+    let copy = [...names];
+    let sortedArray = copy.sort(sortAlphabetically);
+    console.log(sortedArray);
+    setNames(sortedArray)
+  }
+
+  const sortAlphabetically = (a, b) => {
+    var nameA = a.name.first.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.name.first.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    // names must be equal
+    return 0;
+  }
+
+  const sortAlphabeticallyReverse = (a, b) => {
+    var nameA = a.name.first.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.name.first.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return 1;
+    }
+    if (nameA > nameB) {
+      return -1;
+    }
+    // names must be equal
+    return 0;
+  }
 
   return (
     // <>
@@ -66,15 +105,17 @@ const Table = () => {
           <tr>
             <th scope="col"> </th>
             <th scope="col">
-              First
+              First 
               <img
-                src="../../downarrow.png"
-                onClick={handleDownArrowSort}
+                src={DownArrowImage}
+                style={{ height: '22px', width: 'auto', margin:'5px'}}
+                onClick={handelDownArrowSort}
                 alt="DownArrow"
               />
               <img
-                src="../../uparrow.png"
-                onClick={handleUpArrowSort}
+                src={UpArrowImage}
+                style={{ height: 'auto', width: '20px' , margin:'5px'}}
+                onClick={handelUpArrowSort}
                 alt="UpArrow"
               />
             </th>
