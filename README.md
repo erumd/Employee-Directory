@@ -19,6 +19,8 @@ https://github.com/erumd/Employee-Directory
 
 https://erumd.github.io/Employee-Directory/
 
+![Screenshot](./employee/directory.png)
+
 ## Contributing
 
 If you would like to make this application better then please fork this repo. Create your branch. Push your changes. Lastly, open a pull request on GitHub for me to approve.
