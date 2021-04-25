@@ -19,7 +19,7 @@ https://github.com/erumd/Employee-Directory
 
 https://erumd.github.io/Employee-Directory/
 
-![Screenshot](./employee/directory.png)
+![Screenshot](.employee/src/components/images/ScreenShot.png)
 
 ## Contributing
 
