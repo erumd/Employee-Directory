@@ -39,63 +39,63 @@ const Table = () => {
     }
   };
 
-  const Search2 = ({ handleChange, value }) => (
-    <div className="searchBar row mt-5">
-      <form className="form mt-3">
+  return (
+    // <>
+
+    <div className="container mt-3">
+      {/* <Search2 value={lookup} handleChange={handleSearch} /> */}
+      <form className="form mt-5">
         <input
           className="form-control w-25 mx-auto"
           type="search"
           placeholder="Search for Employee"
           name="search"
-          onChange={handleChange}
-          value={value}
+          onChange={handleSearch}
+          value={lookup}
         />
       </form>
-      <div>
-        <button
-          //   onClick={handleSearch}
-          className="btn btn-secondary mt-3 mb-5 d-grid mx-auto"
-          type="submit"
-        >
-          Search
-        </button>
-      </div>
-    </div>
-    //   );
-  );
+      <br></br>
+      <br></br>
 
-  return (
-    <>
-      <div className="container mt-3">
-        <Search2 value={lookup} handleChange={handleSearch} />
-
-        <table className="table">
-          <thead className="thead-dark">
+      <table className="table">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col"> </th>
+            <th scope="col">
+              First
+              <img
+                src="../../downarrow.png"
+                onClick={handelDownArrowSort}
+                alt="DownArrow"
+              />
+              <img
+                src="../../uparrow.png"
+                onClick={handeUpArrowSort}
+                alt="UpArrow"
+              />
+            </th>
+            <th scope="col">Last</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          {names.map((item) => (
             <tr>
-              <th scope="col"> </th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Email</th>
-              <th scope="col">Phone</th>
+              <th scope="row">
+                {' '}
+                <img src={item.picture.medium} alt="" />{' '}
+              </th>
+              <td>{item.name.first}</td>
+              <td>{item.name.last}</td>
+              <td>{item.email}</td>
+              <td>{item.cell}</td>
             </tr>
-          </thead>
-          <tbody>
-            {names.map((item) => (
-              <tr>
-                <th scope="row">
-                  {' '}
-                  <img src={item.picture.medium} alt="" />{' '}
-                </th>
-                <td>{item.name.first}</td>
-                <td>{item.name.last}</td>
-                <td>{item.email}</td>
-                <td>{item.cell}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    // </>
   );
 };
 
