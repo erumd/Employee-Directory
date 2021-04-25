@@ -4,6 +4,7 @@
 
 import React from 'react';
 import axios from 'axios';
+import UpArrowImage from '../'
 // import Search2 from './search2';
 import { useState, useEffect } from 'react';
 
@@ -39,6 +40,9 @@ const Table = () => {
     }
   };
 
+  const { handleDownArrowSort } = () => {};
+  const { handleUpArrowSort } = () => {};
+
   return (
     // <>
 
@@ -65,12 +69,12 @@ const Table = () => {
               First
               <img
                 src="../../downarrow.png"
-                onClick={handelDownArrowSort}
+                onClick={handleDownArrowSort}
                 alt="DownArrow"
               />
               <img
                 src="../../uparrow.png"
-                onClick={handeUpArrowSort}
+                onClick={handleUpArrowSort}
                 alt="UpArrow"
               />
             </th>
